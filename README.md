@@ -6,4 +6,4 @@ Machine learning project to classify artworks
 
 docker build --tag python-docker .
 docker images
-docker run python-docker
+docker run -v "$(pwd)/csv_data:/app/csv_data" python-docker
