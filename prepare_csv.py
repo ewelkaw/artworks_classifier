@@ -5,7 +5,7 @@ import pandas
 csv_data = []
 artists_counter = 0
 artists = {}
-for dirname, _, filenames in os.walk("resized/resized"):
+for dirname, _, filenames in os.walk("/resized/resized"):
     for filename in filenames:
         if filename.count("_") == 3:
             class_name = "_".join(filename.split("_", 3)[:3])
