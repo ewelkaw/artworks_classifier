@@ -2,3 +2,8 @@ numpy==1.23.2
 pandas==1.4.3
 keras==2.9.0
 Keras-Preprocessing==1.1.2
+Collecting tqdm
+  Downloading tqdm-4.64.1-py2.py3-none-any.whl (78 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.5/78.5 kB 1.7 MB/s eta 0:00:00
+Installing collected packages: tqdm
+Successfully installed tqdm-4.64.1
