@@ -2,3 +2,5 @@ numpy==1.23.2
 pandas==1.4.3
 keras==2.9.0
 Keras-Preprocessing==1.1.2
+matplotlib==3.6.0
+tqdm==4.63.0
