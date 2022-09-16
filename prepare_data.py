@@ -25,7 +25,13 @@ for filename in tqdm(Path("resized").joinpath("resized").glob("*.jpg")):
 artist_artwork = pandas.DataFrame(csv_data, columns=["Category", "Name", "Artwork"])
 artist_artwork.to_csv("csv_data/artist_artwork.csv")
 
-# Cleaning divided_data directory
+# Copying divided_data_sceleton and renaming it to divided_data
+shutil.copytree(
+        Path("divided_data_sceleton"),
+        Path("divided_data"),
+    )
+
+# Cleaning divided_data directory just in case
 print("Cleaning directories so they are preapred for new datasets")
 files = Path("divided_data").glob("**/**/*.jpg")
 [[file.unlink() for file in tqdm(files) if file.is_file()]]
