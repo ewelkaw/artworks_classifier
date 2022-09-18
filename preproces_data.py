@@ -58,7 +58,7 @@ def load_data(save_image=False):
     train_data = trdata.flow_from_directory(
         directory="divided_data/x_train",
         target_size=(IMG_ROWS, IMG_COLS),
-        batch_size=32,
+        batch_size=64,
         class_mode="categorical",
         color_mode="rgb",
         seed=2020,
@@ -98,10 +98,10 @@ def load_data(save_image=False):
     val_data = vdata.flow_from_directory(
         directory="divided_data/x_val",
         target_size=(IMG_ROWS, IMG_COLS),
-        batch_size=32,
+        batch_size=64,
         class_mode="categorical",
         seed=2020,
-                subset="training",
+        subset="validation",
         shuffle=True,
     )
     tsdata = ImageDataGenerator(
@@ -132,7 +132,10 @@ def load_data(save_image=False):
     test_data = tsdata.flow_from_directory(
         directory="divided_data/x_test",
         target_size=(IMG_ROWS, IMG_COLS),
-        batch_size=32,
+        batch_size=64,
         class_mode="categorical",
+        seed=2020,
+        subset="training",
+        shuffle=True,
     )
     return train_data, val_data, test_data
