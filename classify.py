@@ -36,11 +36,12 @@ base_model = ResNet152(
 base_model.trainable = False
 
 # create new model at the top
-inputs = Input(shape=(IMG_ROWS, IMG_COLS, 3))
+# inputs = Input(shape=(IMG_ROWS, IMG_COLS, 3))
 # We make sure that the base_model is running in inference mode here,
 # by passing `training=False`. This is important for fine-tuning, as you will
 # learn in a few paragraphs.
-x = base_model(inputs, training=False)
+# x = base_model(inputs, training=False)
+x = Flatten()(base_model.output)
 # Convert features of shape `base_model.output_shape[1:]` to vectors
 x = GlobalAveragePooling2D()(x)
 # A Dense classifier with a single unit (binary classification)
